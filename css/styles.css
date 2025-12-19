@@ -56,7 +56,7 @@ body {
     backdrop-filter: blur(8px);
 }
 
-/* LOGIN */
+/* LOGIN 
 .center {
     min-height: 100vh;
     display: flex;
@@ -130,7 +130,7 @@ input:focus {
 
 .btn.primary.small {
     padding: 10px 14px;
-}
+}*/
 
 /* PAGINA PORTAL */
 .topbar {
