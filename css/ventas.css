@@ -1,0 +1,292 @@
+:root {
+    --primary-blue: #004a99;
+    --light-blue: #0d6efd;
+    --bg-main: #cbd3da;
+    --border-gray: #adb5bd;
+    --text-muted: #555;
+}
+
+
+.main-card {
+    background: var(--bg-main);
+    border-radius: 4px;
+    padding: 15px;
+    border: 1px solid #000000;
+}
+
+/* Cabecera y Botones */
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-badge {
+    background: #495057;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.btn-top {
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.btn-emitir-factura { background-color: #0056b3; }
+.btn-emitir-boleta { background-color: #e67e22; }
+.btn-nota-venta { background-color: #9b59b6; }
+
+
+.label-custom {
+    display: block;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.input-group-custom {
+    position: relative;
+}
+
+.icon-inside {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.form-control-custom {
+    background-color: #e9ecef;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    width: 100%;
+}
+
+.btn-search-blue {
+    background-color: var(--light-blue);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 4px 4px 0;
+}
+
+
+.table-blue-header {
+    background-color: var(--light-blue);
+    color: white;
+    display: grid;
+    grid-template-columns: 100px 100px 120px 1fr 120px 120px 120px;
+    padding: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+}
+
+.table-row-item {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100px 100px 120px 1fr 120px 120px 120px;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.table-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.btn-manage {
+    background-color: #004a99;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+.summary-card {
+    border-left: 1px solid #999;
+    padding-left: 20px;
+}
+
+.summary-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.summary-item.total {
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 1rem;
+    color: #000;
+}
+
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content-custom {
+    background: white;
+    width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideDown 0.3s ease;
+}
+
+.modal-header-custom {
+    background: #0056b3;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-body-custom {
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.modal-footer-custom {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.btn-confirmar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Estilos del Modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.invoice-box {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.invoice-header-print {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.invoice-details {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.invoice-type { font-weight: bold; font-size: 1.2rem; }
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-summary {
+    text-align: right;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+
+.total-final { font-size: 1.4rem; font-weight: bold; }
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* CONFIGURACIÓN PARA IMPRESORA */
+@media print {
+    body * { visibility: hidden; } /* Oculta todo el sitio */
+    #modalFactura, #modalFactura * { visibility: visible; } /* Muestra el modal */
+    #modalFactura { position: absolute; left: 0; top: 0; width: 100%; background: white; }
+    .no-print { display: none !important; } /* Oculta botones de cerrar/imprimir */
+}
+
+.fas{
+    background-color: white;
+}

@@ -1,54 +1,80 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sistema de Ventas - Inicio</title>
+  <title>Sistema de Ventas - Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
   <header class="topbar">
-    <div class="brand">Sistema de Ventas</div>
+    <div class="brand">SISTEMA</div>
     <div class="topbar-right">
-      <span id="userLabel" class="muted">Usuario: demo</span>
+      <span id="userLabel" class="muted">Usuario: admin</span>
       <button id="btnLogout" class="btn ghost">Salir</button>
     </div>
   </header>
 
   <div class="layout">
     <aside class="sidebar">
-      <div class="side-title">Menú</div>
-      <nav class="nav">
-        <a class="nav-item" href="inicio.html" data-page="inicio">🏠 Inicio</a>
-        <a class="nav-item" href="vender.html" data-page="vender">🧾 Vender</a>
-      </nav>
-    </aside>
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h4>ADMINISTRADOR</h4>
+        </div>
 
-    <main class="workarea">
-      <section class="card">
-        <h2 class="h2">Inicio</h2>
-        <p class="muted">Panel principal del sistema de ventas (demo).</p>
-
-        <div class="grid" style="margin-top:12px;">
-          <div class="mini-card">
-            <h4>Ventas del día</h4>
-            <p class="muted">S/ 0.00 (demo)</p>
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="fas fa-user"></i>
           </div>
-          <div class="mini-card">
-            <h4>Productos</h4>
-            <p class="muted">0 registrados (demo)</p>
-          </div>
-          <div class="mini-card">
-            <h4>Caja</h4>
-            <p class="muted">Cerrada (demo)</p>
+          <div class="user-info">
+            <span class="name">dacuna</span>
+            <span class="role">● Admin</span>
           </div>
         </div>
 
-      </section>
-    </main>
-  </div>
+        <nav class="nav">
+          <a class="nav-item" href="#"><i class="fas fa-shopping-bag"></i><i class="icon">🏠</i> <span>Inicio</span></a>
 
-  <script src="js/layout.js"></script>
+          <div class="dropdown">
+            <input type="checkbox" id="drop-prod">
+            <label for="drop-prod" class="nav-item">
+              <i class="fas fa-box"></i> <span>Productos y Servicios</span> <i class="fas fa-chevron-down arrow"></i>
+            </label>
+            <ul class="submenu">
+              <li><a href="#" target="">Lista de Productos</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <input type="checkbox" id="drop-ventas" checked> <label for="drop-ventas" class="nav-item">
+              <i class="fas fa-receipt"></i> <span>Ventas</span> <i class="fas fa-chevron-down arrow"></i>
+            </label>
+            <ul class="submenu">
+              <li><a href="fachada.html" target="content-frame"><i class="far fa-file-alt"></i> Emitir factura</a></li>
+              <li><a href="vender.html" target="content-frame"><i class="fas fa-shopping-cart"></i> Nueva Venta</a></li>
+            </ul>
+          </div>
+
+          <a class="nav-item" href="#"><i class="fas fa-shopping-bag"></i> <span>Compras</span></a>
+          <a class="nav-item" href="#"><i class="fas fa-truck"></i> <span>Guía de Remisión</span></a>
+          <a class="nav-item" href="#"><i class="fas fa-file-invoice-dollar"></i> <span>Cotizaciones</span></a>
+          <a class="nav-item" href="#"><i class="fas fa-chart-bar"></i> <span>Reportes</span></a>
+          <a class="nav-item" href="#"><i class="fas fa-users"></i> <span>Clientes</span></a>
+          <a class="nav-item" href="#"><i class="fas fa-cog"></i> <span>Configuración</span></a>
+        </nav>
+      </aside>
+    </aside>
+
+    <main class="workarea" style="padding: 0; margin: 0; flex-grow: 1; height: calc(100vh - 60px); overflow: hidden;">
+      <iframe name="content-frame" src="fachada.html" frameborder="0"
+        style="width: 100%; height: 100%; display: block; border: none;">
+      </iframe>
+    </main>
+
 </body>
+
 </html>

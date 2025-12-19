@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Factura</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ventas.css">
+
+</head>
+
+<body>
+
+    <div class="main-card">
+        <div class="header-actions">
+            <div class="title-badge">
+                <i class="fas fa-file-invoice"></i> NUEVA FACTURA
+            </div>
+            <div class="button-group">
+
+                <button id="btnAbrirFactura" class="btn-top btn-emitir-factura">
+                    <i class="fas fa-file-invoice"></i> EMITIR FACTURA
+                </button>
+
+                <button class="btn-top btn-emitir-boleta"><i class="fas fa-file-alt"></i> EMITIR BOLETA</button>
+                <button class="btn-top btn-nota-venta"><i class="fas fa-receipt"></i> NOTA DE VENTA</button>
+            </div>
+        </div>
+
+        <div class="row g-2 mb-3">
+            <div class="col-md-3">
+                <label class="label-custom">MONEDA:</label>
+                <div class="input-group-custom">
+                    <i class="fas fa-money-bill-wave icon-inside"></i>
+                    <select class="form-control-custom ps-5">
+                        <option>Soles (S/)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="label-custom">SERIE:</label>
+                <div class="input-group-custom">
+                    <i class="fas fa-key icon-inside"></i>
+                    <select class="form-control-custom ps-5">
+                        <option>F002</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label class="label-custom">FECHA:</label>
+                <input type="date" class="form-control-custom" value="2025-12-19">
+            </div>
+            <div class="col-md-3">
+                <label class="label-custom">VENCIMIENTO:</label>
+                <input type="date" class="form-control-custom" value="2025-12-19">
+            </div>
+        </div>
+
+        <div class="client-section">
+            <label class="label-custom">CLIENTE:</label>
+            <div class="row g-2">
+                <div class="col-md-2">
+                    <div class="input-group-custom">
+                        <i class="fas fa-id-card icon-inside"></i>
+                        <select class="form-control-custom ps-5">
+                            <option>R.U.C.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                    <input type="text" class="form-control-custom" placeholder="10405242112">
+                    <button class="btn-search-blue"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" class="form-control-custom" placeholder="Nombre del cliente">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 my-3">
+            <button class="btn-manage" onclick="agregarFila()">
+                <i class="fas fa-shopping-cart"></i> AGREGAR PRODUCTOS O SERVICIOS
+            </button>
+            <button class="btn-manage">
+                NUEVO PRODUCTO O SERVICIO <i class="fas fa-th"></i>
+            </button>
+        </div>
+
+        <div class="invoice-table-container">
+            <div class="table-blue-header">
+                <div>CÓDIGO</div>
+                <div>CANTIDAD</div>
+                <div>UNI/MEDIDA</div>
+                <div>DESCRIPCIÓN</div>
+                <div>PRECIO UNITARIO</div>
+                <div>VALOR UNITARIO</div>
+                <div>SUB.TOTAL</div>
+            </div>
+
+            <div id="cuerpo-tabla">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <label class="label-custom">MÉTODO DE PAGO:</label>
+                <div class="input-group-custom mb-3" style="max-width: 300px;">
+                    <i class="fas fa-wallet icon-inside"></i>
+                    <select class="form-control-custom ps-5">
+                        <option>En efectivo</option>
+                    </select>
+                </div>
+                <label class="label-custom">OBSERVACIONES:</label>
+                <div class="input-group-custom">
+                    <i class="fas fa-comment-dots icon-inside" style="top: 15px;"></i>
+                    <textarea class="form-control-custom ps-5" rows="3"
+                        placeholder="Ingrese observaciones..."></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="summary-card">
+                    <div class="summary-title">RESUMEN</div>
+                    <div class="summary-item"><span>DESCUENTO (-)</span><span>0.00</span></div>
+                    <div class="summary-item"><span>IGV(18%)</span><span>0.00</span></div>
+                    <div class="summary-item total"><span>TOTAL</span><span>0.00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modalFactura" class="modal-overlay">
+        <div class="modal-content-custom">
+            <div class="modal-header-custom">
+                <h5><i class="fas fa-check-circle"></i> Confirmación de Factura</h5>
+            </div>
+            <div class="modal-body-custom">
+                <p>La factura ha sido generada correctamente con los siguientes datos:</p>
+                <ul id="resumenDatos">
+                </ul>
+            </div>
+            <div class="modal-footer-custom">
+                <button class="btn-confirmar" onclick="cerrarModal()">ACEPTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalFactura" class="modal-overlay">
+        <div class="modal-content invoice-box">
+            <div class="invoice-header-print">
+                <div class="brand-print">AWSPERUTIC</div>
+                <div class="invoice-details">
+                    <p><strong>R.U.C.:</strong> 20123456789</p>
+                    <p class="invoice-type">FACTURA ELECTRÓNICA</p>
+                    <p id="f-serie-numero">F001-000001</p>
+                </div>
+            </div>
+
+            <div class="invoice-client-data">
+                <p><strong>Cliente:</strong> <span id="f-cliente">---</span></p>
+                <p><strong>RUC/DNI:</strong> <span id="f-documento">---</span></p>
+                <p><strong>Fecha:</strong> <span id="f-fecha">---</span></p>
+            </div>
+
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Cant.</th>
+                        <th>Descripción</th>
+                        <th>P. Unit</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="f-items">
+                </tbody>
+            </table>
+
+            <div class="invoice-summary">
+                <p>OP. GRAVADA: S/ <span id="f-subtotal">0.00</span></p>
+                <p>I.G.V. (18%): S/ <span id="f-igv">0.00</span></p>
+                <p class="total-final">TOTAL: S/ <span id="f-total">0.00</span></p>
+            </div>
+
+            <div class="no-print modal-actions">
+                <button onclick="window.print()" class="btn primary">Imprimir</button>
+                <button onclick="cerrarModal()" class="btn ghost">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vender.js"></script>
+</body>
+
+</html>
