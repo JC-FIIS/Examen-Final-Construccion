@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Ventas - Vender</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">Sistema de Ventas</div>
+    <div class="topbar-right">
+      <span id="userLabel" class="muted">Usuario: demo</span>
+      <button id="btnLogout" class="btn ghost">Salir</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-title">Menú</div>
+      <nav class="nav">
+        <a class="nav-item" href="inicio.html" data-page="inicio">🏠 Inicio</a>
+        <a class="nav-item" href="vender.html" data-page="vender">🧾 Vender</a>
+      </nav>
+    </aside>
+
+    <main class="workarea">
+      <section class="card">
+        <h2 class="h2">Vender</h2>
+        <p class="muted">Pantalla base para registrar una venta (demo).</p>
+
+        <div class="sale-row" style="margin-top:12px;">
+          <div class="sale-field">
+            <label>Producto</label>
+            <input id="producto" type="text" placeholder="Ej: Tornillo 1/4" />
+          </div>
+
+          <div class="sale-field">
+            <label>Cantidad</label>
+            <input id="cantidad" type="number" min="1" value="1" />
+          </div>
+
+          <div class="sale-field">
+            <label>Precio</label>
+            <input id="precio" type="number" min="0" step="0.10" placeholder="0.00" />
+          </div>
+        </div>
+
+        <div class="sale-actions">
+          <button id="btnAdd" class="btn ghost">Agregar (demo)</button>
+          <button id="btnPay" class="btn primary small">Cobrar (demo)</button>
+        </div>
+
+        <div class="mini muted" style="margin-top:10px;">
+          Aquí luego conectas carrito, stock, impresión, etc.
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/vender.js"></script>
+</body>
+</html>
