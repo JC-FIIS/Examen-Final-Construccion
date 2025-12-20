@@ -62,3 +62,27 @@ Si el grupo lo considera pertinente, puede usar cualquier otra tecnologia como R
 ## 5. Evaluacion 
 - Se debera de enviar el enlace git al whastapp personal del docente.
 - Al finalizar el tiempo el docente se acercara para consultar que tecnologia usaron.
+
+
+
+## Documentacion Examen Final - Construccion de software
+
+## Integrnates
+- Castillejo Salazar (Líder)
+- Diego Checya (Colaborador)
+- Andy Quispe(Colaborador)
+- Jack Bravo(Colaborador)
+
+# Distribucion:
+- Castillejo: 
+    Encargado de rediseñar el login, herramientas usada css,html y js, css para el aspecto bisusal como coloCaR una imagen como fondo luego darle un transparecia oscura al contenedor el cual contenia las credenciales para ingresar como el usuario y la contraceña y el boton de ingresar, se permitira el ingreso completanto los campos
+
+- Chekya:
+    me encargue de hacer la pantalla de inicio y que funcione la parte de emitir factura 
+
+- ANDY
+    encargado de la bararra de menu, con menus desplegables, con funciones de ventas: emitir factura con ventada de confirmacion y agragar ventas
+- JACK 
+    Ayudo en el login, pantalla de carga de emitir de factura.
+
+    todoS aportaron el el trabajo

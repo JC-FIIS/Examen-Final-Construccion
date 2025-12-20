@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       localStorage.setItem("ventas_user", user.value.trim());
-      location.href = "inicio.html";
+      location.href = "principal.html";
     }, 500); // 0.5 segundos
   };
 
